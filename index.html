@@ -6,40 +6,21 @@
     <title>Babydolls da Tati ❤️</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
-    <script>
-        function toggleCart() {
-            const cart = document.getElementById("cart");
-            cart.classList.toggle("hidden");
-        }
-
-        document.addEventListener("DOMContentLoaded", function() {
-            const products = [
-                { id: 1, name: "Baby Dool Pink", price: 49.90, image: "img/bd1.jpg" },
-                { id: 2, name: "Baby Dool S2", price: 49.90, image: "img/bd2.jpg" },
-                { id: 3, name: "Baby Dool Meme", price: 49.90, image: "img/bd3.jpg" },
-                { id: 4, name: "Baby Dool White", price: 49.90, image: "img/bd4.jpg" },
-                { id: 5, name: "Baby Dool Pool", price: 49.90, image: "img/bd5.jpg" },
-                { id: 6, name: "Baby Dool Mickey", price: 49.90, image: "img/bd6.jpg" },
-            ];
-
-            const productList = document.getElementById("product-list");
-            products.forEach(product => {
-                const productElement = document.createElement("div");
-                productElement.classList.add("product");
-                productElement.innerHTML = `
-                    <img src="${product.image}" alt="${product.name}">
-                    <h3>${product.name}</h3>
-                    <p>R$ ${product.price.toFixed(2)}</p>
-                    <button onclick="addToCart(${product.id})">Adicionar ao Carrinho</button>
-                `;
-                productList.appendChild(productElement);
-            });
-        });
-    </script>
+    <link rel="shortcut icon" href="img/ts.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <header>
         <h1>Babydolls da Tati ❤️</h1>
+        <div class="icone">
+            <a href="https://www.instagram.com/corretora_tatyanesilva?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/5575981363224" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>   
+        </div>
+       
         <div class="cart">
             <button onclick="toggleCart()">🛒 Carrinho (<span id="cart-count">0</span>)</button>
         </div>
@@ -53,5 +34,9 @@
         <p>Total: R$ <span id="cart-total">0.00</span></p>
         <button onclick="checkout()">Finalizar Compra</button>
     </aside>
+
+    <footer>
+        <p>&copy; 2025 Babydolls da Tati ❤️. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>
