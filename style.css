@@ -1,14 +1,17 @@
+/* ===== ESTILO GERAL ===== */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #edc4e2;
+    overflow-x: hidden; /* Remove rolagem horizontal */
 }
 
+/* ===== CABEÇALHO RESPONSIVO ===== */
 header {
     font-weight: bold;
     width: 100%;
-    height: 75px;
+    height: 50px;
     position: fixed;
     z-index: 99999;
     top: 0;
@@ -36,18 +39,21 @@ header .cart button {
     border-radius: 10px;
     color: white;
     margin-bottom: 13px;
+    margin-right: 50px;
+    
 }
 
 .cart button:hover {
-    background-color: #d10808e3;
+    background-color: #bf066fe3;
 }
 
+/* ===== PRODUTOS RESPONSIVOS ===== */
 .product-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 20px;
-    margin-top: 150px;
+    margin-top: 200px;
 }
 
 .product {
@@ -57,12 +63,14 @@ header .cart button {
     margin: 15px;
     padding: 15px;
     text-align: center;
-    width: 250px;
+    width: 100%;
+    max-width: 250px; /* Evita que fiquem muito grandes */
     transition: transform 0.3s ease;
 }
 
 .product img {
     width: 100%;
+    height: auto;
     border-radius: 10px;
 }
 
@@ -78,10 +86,11 @@ button {
     cursor: pointer;
     border-radius: 5px;
     margin-top: 10px;
+    
 }
 
 button:hover {
-    background-color: #3f854e;
+    background-color: #bf066fe3;
 }
 
 #cart {
@@ -119,44 +128,34 @@ button:hover {
     font-weight: bold;
 }
 
-.icone{
-    text-decoration: none;
-    display: block;
-    font-size: 30px; 
-    margin-top: 120px;  
-    margin-right: 220px;
+/* ===== ÍCONES NO INÍCIO DA TELA ===== */
+.icone {
+    text-align: center; /* Centraliza os ícones */
+    margin: 20px 0; /* Adiciona espaço antes dos produtos */
+    
 }
-.icone a{
+
+.icone a {
     text-decoration: none;
+    display: inline-block;
+    margin: 0 20px; /* Espaço entre os ícones */
 }
-.fa-brands{
+
+.fa-brands, .fab {
     text-decoration: none;
-    padding: 20px;
-    color:rgb(243, 130, 218);
-    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
-    font-size: 30px; /* Define um tamanho padrão para o ícone */
-    transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease; /* Animação suave */
+    padding: 15px;
+    color: rgb(243, 130, 218);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 30px; /* Define um tamanho padrão */
+    transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
     border-radius: 10px;
-    margin-bottom: 120px; 
 }
-.fa-brands:hover{
+
+.fa-brands:hover, .fab:hover {
     background-color: #b270a0;
     transform: scale(1.05);
 }
-.fab{
-    text-decoration: none;
-    padding: 20px;
-    color:rgb(243, 130, 218);
-    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
-    font-size: 30px; /* Define um tamanho padrão para o ícone */
-    transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease; /* Animação suave */
-    border-radius: 10px;
-    margin-bottom: 120px;
-}
-.fab:hover{
-    background-color: #b270a0;
-    transform: scale(1.05); /* Aumenta o tamanho em 20% */
-}
+
 footer {
     background-color: #5b0d50;
     color: rgb(243, 130, 218);
@@ -167,28 +166,28 @@ footer {
     font-size: 14px;
 }
 
-
-/* ==== MEDIA QUERIES PARA RESPONSIVIDADE ==== */
+/* ===== MEDIA QUERIES PARA RESPONSIVIDADE ===== */
 @media (max-width: 1024px) {
-    .product {
-        width: 45%; /* Produtos ocupam metade da largura */
-    }
     header {
         height: 65px;
         padding: 8px 15px;
+    }
+    
+    .product {
+        width: 45%; /* Produtos ocupam metade da largura */
     }
 }
 
 @media (max-width: 768px) {
     header {
-        height: 65px;
-        flex-direction: column; /* Empilha os itens do cabeçalho */
+        height: auto;
+        flex-direction: column;
         text-align: center;
         padding: 10px;
     }
-    header .cart button {
-        font-size: 12px;
-        padding: 6px 10px;
+
+    .menu-lateral {
+        left: 5px;
     }
 
     .product-list {
@@ -200,16 +199,6 @@ footer {
         width: 90%;
     }
 
-    .icone {
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .fab {
-        padding: 10px;
-        font-size: 24px;
-    }
-
     footer {
         font-size: 12px;
     }
@@ -219,19 +208,16 @@ footer {
     .product {
         width: 100%;
     }
-
-    .fab {
-        font-size: 20px;
+    
+    .menu-lateral a {
+        font-size: 24px;
         padding: 8px;
     }
+    
     header {
-        height: 65px;
+        height: auto;
         flex-direction: column;
         padding: 5px;
         font-size: 12px;
-    }
-    header .cart button {
-        font-size: 12px;
-        padding: 5px 8px;
     }
 }

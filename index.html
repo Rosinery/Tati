@@ -3,40 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Babydolls da Tati ❤️</title>
+    <title>Baby-dolls da Tati ❤️</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
     <link rel="shortcut icon" href="img/ts.jpg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js"></script>
+
 </head>
 <body>
     <header>
-        <h1>Babydolls da Tati ❤️</h1>
-        <div class="icone">
-            <a href="https://www.instagram.com/corretora_tatyanesilva?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="target="_blank">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://wa.me/5575981363224" target="_blank">
-                <i class="fab fa-whatsapp"></i>
-            </a>   
-        </div>
+        <h1>Baby-dolls da Tati ❤️</h1>
        
+            <div class="icone">
+               <!--<a href="carrinho.html" target="_blank" class="fa-solid fa-shopping-cart"></a>-->  <!-- Ícone do Carrinho -->
+                <a href="https://wa.me/5575981363224" target="_blank" class="fa-brands fa-whatsapp"></a> <!-- Ícone do WhatsApp -->
+                <a href="https://www.instagram.com/corretora_tatyanesilva?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="fa-brands fa-instagram"></a> <!-- Ícone do Instagram -->
+            </div>
+            
         <div class="cart">
-            <button onclick="toggleCart()">🛒 Carrinho (<span id="cart-count">0</span>)</button>
+            
+            <button onclick="irParaCarrinho()">🛒 Carrinho (<span id="cart-count">0</span>)</button>
         </div>
     </header>
+    
     <main>
         <div class="product-list" id="product-list"></div>
     </main>
     <aside id="cart" class="hidden">
         <h2>Carrinho</h2>
+        
         <ul id="cart-items"></ul>
         <p>Total: R$ <span id="cart-total">0.00</span></p>
         <button onclick="checkout()">Finalizar Compra</button>
+        <button onclick="limparCarrinho()">Limpar Carrinho</button>
+        <button id="finalize-purchase">Finalizar Compra</button>
+
+      
     </aside>
 
     <footer>
-        <p>&copy; 2025 Babydolls da Tati ❤️. Todos os direitos reservados.</p>
+        <p>&copy; 2025 Baby-dolls da Tati ❤️. Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>
